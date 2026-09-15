@@ -1,0 +1,31 @@
+{
+  "schema": "meaw.component/v1",
+  "name": "hermes-agent",
+  "repository": "suryamayaharum-droid/hermes-agent",
+  "role": "learning-agent-runtime",
+  "capabilities": [
+    "agent-runtime",
+    "mcp-client",
+    "memory",
+    "parallel-subagents",
+    "scheduled-automation",
+    "self-improving-skills"
+  ],
+  "interfaces": {
+    "cli": "hermes",
+    "mcp_client": true
+  },
+  "memory": {
+    "mode": "bridge",
+    "backend": "hermes-memory"
+  },
+  "health": [
+    {"type": "command", "argv": ["hermes", "doctor"]}
+  ],
+  "metadata": {
+    "ecosystem": "MEAW",
+    "integration": "runtime-bridge",
+    "openclaw_migration": true,
+    "discovery_executes_commands": false
+  }
+}
