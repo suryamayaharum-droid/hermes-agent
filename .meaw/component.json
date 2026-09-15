@@ -4,9 +4,9 @@
   "repository": "suryamayaharum-droid/hermes-agent",
   "role": "learning-agent-runtime",
   "capabilities": [
+    "agent-memory",
     "agent-runtime",
     "mcp-client",
-    "memory",
     "parallel-subagents",
     "scheduled-automation",
     "self-improving-skills"
@@ -17,14 +17,18 @@
   },
   "memory": {
     "mode": "bridge",
-    "backend": "hermes-memory"
+    "backend": "hermes-memory",
+    "authority": false
   },
   "health": [
     {"type": "command", "argv": ["hermes", "doctor"]}
   ],
+  "lifecycle": "active",
+  "trust": "owned-fork",
+  "priority": 70,
   "metadata": {
     "ecosystem": "MEAW",
-    "integration": "runtime-bridge",
+    "integration": "learning-worker",
     "openclaw_migration": true,
     "discovery_executes_commands": false
   }
